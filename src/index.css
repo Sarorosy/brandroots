@@ -1,0 +1,20 @@
+#root {
+  width: 100%;
+}
+
+#Map{
+    background: url(./assets/map-bg.jpg) no-repeat center top;
+    min-height: 320px;
+    background-size: cover;
+    width: 100%;
+}
+
+.summary, .watermark{
+  display: none !important;
+}
+.watermark{
+  display: none !important;
+}
+.titlebar{
+  display: none !important;
+}
