@@ -1,135 +1,255 @@
-// BreastLumps.jsx
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Info, CheckCircle, XCircle } from 'lucide-react';
+import { Info, CheckCircle, XCircle, Heart, Shield, Stethoscope } from 'lucide-react';
 
 const BreastLumps = () => {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
+  const staggerChildren = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   return (
-    <div className="p-6 bg-tealLight text-textGray rounded-lg shadow-lg">
-      <motion.h1
-        className="text-4xl font-bold text-primary mb-6 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Benign Breast Lumps
-      </motion.h1>
-      <motion.h2
-        className="text-3xl font-semibold text-tealMedium mb-4 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-      >
-        Understanding Breast Lumps
-      </motion.h2>
-      <motion.p
-        className="mb-4 text-lg"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Majority of the breast complaints are benign in nature. Women with breast complaints "assume the worst" when a new problem is identified. It is obviously understandable. However, an understanding of the benign breast disorders is essential to help relieve unnecessary apprehensions.
-      </motion.p>
-      <motion.div
-        className="mb-6"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <img
-          src="https://via.placeholder.com/600x300.png?text=Breast+Health"
-          alt="Breast Health"
-          className="rounded-lg mb-4"
-        />
-      </motion.div>
-      <motion.h3
-        className="text-2xl font-semibold text-tealMedium mt-6 mb-2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        <Info className="inline mr-2" /> Triple Testing
-      </motion.h3>
-      <motion.p
-        className="mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-      >
-        A combination of clinical examination, imaging, and biopsy is necessary for women with significant clinical findings such as an asymmetrical thickening or a discrete palpable mass.
-      </motion.p>
-      <motion.h3
-        className="text-2xl font-semibold text-tealMedium mt-6 mb-2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-      >
-        <CheckCircle className="inline mr-2" /> Localized Nodularity
-      </motion.h3>
-      <motion.p
-        className="mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-      >
-        In a woman who has a lump in her breast, localized nodularity is a common finding reflecting the presence of lumpy or nodular breast tissue. It is generally noticed in the upper outer quadrants of the breasts. Localized nodularity is just a physiological change; most women who have been previously diagnosed with “fibrocystic disease” may have had nodular breast tissue.
-      </motion.p>
-      <motion.h3
-        className="text-2xl font-semibold text-tealMedium mt-6 mb-2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-      >
-        <CheckCircle className="inline mr-2" /> Fibroadenomas
-      </motion.h3>
-      <motion.p
-        className="mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.9 }}
-      >
-        Fibroadenomas are harmless lumps of glandular and fibrous tissue. Breasts are made up of lobules (milk-producing glands) and ducts (tubes that carry milk to the nipple), and are surrounded by glandular, fibrous, and fatty tissue. Typically, fibroadenoma develops from a lobule and later the glandular tissue and ducts grow over the lobule, forming a solid lump. Fibroadenomas in breasts may feel firm and rubbery and will have a smooth texture. This condition is characterized by lumps that move around when pressed, also referred to as ‘a breast mouse’.
-      </motion.p>
-      <motion.h3
-        className="text-2xl font-semibold text-tealMedium mt-6 mb-2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.0 }}
-      >
-        <CheckCircle className="inline mr-2" /> Cysts
-      </motion.h3>
-      <motion.p
-        className="mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.1 }}
-      >
-        Cysts are fluid entrapments in the breast tissue, which are common in women in the age group of 35–50. They usually cease with menopause but are common in women taking Hormone Replacement Therapy (HRT). Approximately 7% of women may have a palpable cyst at some point in their lives. Researchers state that about half of the women who attend breast clinics complain about cysts.
-      </motion.p>
-      <motion.h3
-        className="text-2xl font-semibold text-tealMedium mt-6 mb-2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.2 }}
-      >
-        <XCircle className="inline mr-2" /> Less Common Benign Breast Lumps
-      </motion.h3>
-      <motion.p
-        className="mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.3 }}
-      >
-        Fat Necrosis occurs due to trauma (sudden injury) or a specific injury to the breast. Breasts are made up of lobules, ducts, glandular, fibrous, and fatty tissue. The damaged area of breast tissue can lead to a lump formation known as fat necrosis. Necrosis refers to cell death.
-      </motion.p>
-      <motion.p
-        className="mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.4 }}
-      >
-        Fat necrosis appears like a firm painless lump, but some women may have tenderness or even pain. The skin around the lump may look red, bruised, or occasionally dimpled. At times, fat necrosis can cause the nipple to retract inwards.
-      </motion.p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-teal-50">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-primary via-tealMedium to-tealLight">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="relative max-w-6xl mx-auto px-6 py-16">
+          <div className="text-center text-white">
+            <div className="flex justify-center mb-6">
+              <div className="p-4 bg-white bg-opacity-20 rounded-full backdrop-blur-sm">
+                <Heart className="w-12 h-12 text-white" />
+              </div>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+              Benign Breast Lumps
+            </h1>
+            <p className="text-xl md:text-2xl text-teal-100 font-light max-w-3xl mx-auto leading-relaxed">
+              Understanding and addressing your concerns with compassionate, evidence-based information
+            </p>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto px-6 py-16 space-y-16">
+        
+        {/* Introduction Card */}
+        <div className="bg-white rounded-2xl shadow-xl border border-teal-100 overflow-hidden">
+          <div className="bg-gradient-to-r from-tealLight to-tealMedium p-6">
+            <div className="flex items-center space-x-3">
+              <Shield className="w-8 h-8 text-white" />
+              <h2 className="text-2xl font-bold text-white">Understanding Breast Health</h2>
+            </div>
+          </div>
+          <div className="p-8">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              The majority of breast complaints are benign in nature. While it's natural for women to "assume the worst" when discovering a new concern, understanding benign breast disorders is essential to help relieve unnecessary apprehensions and provide peace of mind.
+            </p>
+          </div>
+        </div>
+
+        {/* Triple Testing Section */}
+        <div className="bg-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden">
+          <div className="bg-gradient-to-r from-tealLight to-tealMedium  p-6">
+            <div className="flex items-center space-x-3">
+              <Stethoscope className="w-8 h-8 text-white" />
+              <h2 className="text-2xl font-bold text-white">Triple Assessment</h2>
+            </div>
+          </div>
+          <div className="p-8">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              A comprehensive evaluation combining three essential components ensures accurate diagnosis for women with significant clinical findings.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center p-6 bg-blue-50 rounded-xl">
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold">1</span>
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">Clinical Examination</h3>
+                <p className="text-sm text-gray-600">Physical assessment by healthcare professional</p>
+              </div>
+              <div className="text-center p-6 bg-blue-50 rounded-xl">
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold">2</span>
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">Imaging Studies</h3>
+                <p className="text-sm text-gray-600">Ultrasound, mammography, or MRI</p>
+              </div>
+              <div className="text-center p-6 bg-blue-50 rounded-xl">
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold">3</span>
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">Tissue Sampling</h3>
+                <p className="text-sm text-gray-600">Biopsy when clinically indicated</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Common Benign Conditions */}
+        <div className="space-y-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-primary mb-4">Common Benign Conditions</h2>
+            <p className="text-xl text-textGray max-w-2xl mx-auto">
+              Learn about the most frequently encountered benign breast conditions
+            </p>
+          </div>
+
+          {/* Localized Nodularity */}
+          <div className="bg-white rounded-2xl shadow-lg border border-green-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-start p-8">
+              <div className="flex-shrink-0 mr-6">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-8 h-8 text-green-600" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Localized Nodularity</h3>
+                <div className="prose prose-lg text-gray-700">
+                  <p className="mb-4">
+                    A common finding reflecting the presence of lumpy or nodular breast tissue, typically noticed in the upper outer quadrants of the breasts.
+                  </p>
+                  <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded">
+                    <p className="text-green-800 font-medium">
+                      This is a normal physiological change. Many women previously diagnosed with "fibrocystic disease" likely had nodular breast tissue.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Fibroadenomas */}
+          <div className="bg-white rounded-2xl shadow-lg border border-purple-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-start p-8">
+              <div className="flex-shrink-0 mr-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-tealLight to-tealMedium  rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Fibroadenomas</h3>
+                <div className="prose prose-lg text-gray-700">
+                  <p className="mb-4">
+                    Harmless lumps composed of glandular and fibrous tissue that develop from milk-producing lobules.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-6 mb-4">
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-primary mb-2">Characteristics:</h4>
+                      <ul className="text-sm text-primary space-y-1">
+                        <li>• Firm and rubbery texture</li>
+                        <li>• Smooth surface</li>
+                        <li>• Mobile when pressed</li>
+                      </ul>
+                    </div>
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-primary mb-2">Nickname:</h4>
+                      <p className="text-sm text-primary">
+                        Often called "breast mouse" due to their mobility under the skin
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Cysts */}
+          <div className="bg-white rounded-2xl shadow-lg border border-cyan-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-start p-8">
+              <div className="flex-shrink-0 mr-6">
+                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-8 h-8 text-cyan-600" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Breast Cysts</h3>
+                <div className="prose prose-lg text-gray-700">
+                  <p className="mb-4">
+                    Fluid-filled sacs within breast tissue, most common in women aged 35-50 years.
+                  </p>
+                  <div className="bg-cyan-50 border border-cyan-200 p-6 rounded-lg">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="font-semibold text-cyan-800 mb-2">Key Statistics:</h4>
+                        <ul className="text-sm text-cyan-700 space-y-1">
+                          <li>• 7% of women develop palpable cysts</li>
+                          <li>• 50% of breast clinic visits involve cysts</li>
+                          <li>• Usually resolve after menopause</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-cyan-800 mb-2">Important Note:</h4>
+                        <p className="text-sm text-cyan-700">
+                          Common in women taking Hormone Replacement Therapy (HRT)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Less Common Conditions */}
+        <div className="bg-white rounded-2xl shadow-xl border border-orange-100 overflow-hidden">
+          <div className="bg-gradient-to-r from-tealLight to-tealMedium p-6">
+            <div className="flex items-center space-x-3">
+              <XCircle className="w-8 h-8 text-white" />
+              <h2 className="text-2xl font-bold text-white">Less Common Benign Conditions</h2>
+            </div>
+          </div>
+          <div className="p-8">
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Fat Necrosis</h3>
+            <div className="space-y-4">
+              <p className="text-gray-700 leading-relaxed">
+                Occurs following trauma or injury to breast tissue, leading to cell death in the affected area.
+              </p>
+              
+              <div className="bg-orange-50 border-l-4 border-primary p-6 rounded">
+                <h4 className="font-semibold white mb-3">Presentation:</h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h5 className="font-medium  mb-2">Physical Characteristics:</h5>
+                    <ul className="text-sm  space-y-1">
+                      <li>• Firm, usually painless lump</li>
+                      <li>• May cause tenderness or pain</li>
+                      <li>• Can cause nipple retraction</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-medium  mb-2">Skin Changes:</h5>
+                    <ul className="text-sm  space-y-1">
+                      <li>• Redness around the area</li>
+                      <li>• Bruising</li>
+                      <li>• Occasional skin dimpling</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="bg-gradient-to-r from-primary to-tealMedium rounded-2xl p-8 text-center text-white">
+          <Heart className="w-12 h-12 mx-auto mb-4 text-teal-100" />
+          <h2 className="text-2xl font-bold mb-4">Remember: Most Breast Changes Are Benign</h2>
+          <p className="text-lg text-teal-100 max-w-2xl mx-auto leading-relaxed">
+            While it's natural to feel concerned about breast changes, understanding these common benign conditions can help provide reassurance. Always consult with your healthcare provider for proper evaluation and peace of mind.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -120,13 +120,13 @@ export default function Home() {
         {/* Navigation Arrows */}
         <button
           onClick={prevImage}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all duration-300"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all duration-300"
         >
           <ArrowLeft className="w-6 h-6 text-white" />
         </button>
         <button
           onClick={nextImage}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all duration-300"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all duration-300"
         >
           <ArrowRight className="w-6 h-6 text-white" />
         </button>

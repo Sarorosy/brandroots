@@ -14,7 +14,6 @@ const dropdownItems = {
     "Breast Lumps",
     "Breast Shape Changes",
     "Breast Pain",
-    "Nipple Discharge",
     "Breast Biopsy"
   ],
   "General Surgery": [
