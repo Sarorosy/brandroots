@@ -29,17 +29,20 @@ export default function AppRouter() {
           <Route path="/about" element={<About />} />
           <Route path="/contact-us" element={<ContactUs />} />
 
+          <Route path="/breast-cancer" element={<BreastCancer />} />
           <Route path="/breast-cancer/what-is-breast-cancer" element={<BreastCancer />} />
           <Route path="/breast-cancer/breast-cancer-stages" element={<BreastCancerStages />} />
           <Route path="/breast-cancer/am-i-at-risk-of-breast-cancer" element={<BreastCancerRisk />} />
 
 
+          <Route path="/diagnosis" element={<BreastLumps />} />
           <Route path="/diagnosis/breast-lumps" element={<BreastLumps />} />
           <Route path="/diagnosis/breast-shape-changes" element={<BreastShapeChanges />} />
           <Route path="/diagnosis/breast-pain" element={<BreastPain />} />
           <Route path="/diagnosis/breast-biopsy" element={<BreastBiopsy />} />
 
 
+          <Route path="/general-surgery" element={<GeneralConditions />} />
           <Route path="/general-surgery/conditions/:condition" element={<GeneralConditions />} />
           <Route path="/general-surgery/treatments/laparoscopic-mesh-repair-of-inguinal-/-femoral-hernia" element={<Laparoscopic />} />
           <Route path="/general-surgery/treatments/laparoscopic-gall-bladder-surgery" element={<GallBladderSurgery />} />
