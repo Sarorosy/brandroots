@@ -16,6 +16,7 @@ import GeneralConditions from "../pages/conditions/GeneralConditions";
 import Laparoscopic from "../pages/treatments/Laproscopic";
 import GallBladderSurgery from "../pages/treatments/GallBladderSurgery";
 import OpenMeshRepair from "../pages/treatments/OpenMeshRepair";
+import BookAppointment from "../pages/BookAppointment";
 
 export default function AppRouter() {
   return (
@@ -48,6 +49,8 @@ export default function AppRouter() {
           <Route path="/general-surgery/treatments/laparoscopic-gall-bladder-surgery" element={<GallBladderSurgery />} />
           <Route path="/general-surgery/treatments/open-mesh-repair-of-umbilical-and-para-umbilical-hernia" element={<OpenMeshRepair />} />
 
+
+          <Route path="/appointment" element={<BookAppointment />} />
         </Route>
 
       </Routes>
