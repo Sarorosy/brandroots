@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Activity, 
-  AlertTriangle, 
-  Stethoscope, 
-  Search, 
-  Shield, 
-  ChevronRight, 
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Activity,
+  AlertTriangle,
+  Stethoscope,
+  Search,
+  Shield,
+  ChevronRight,
   ChevronDown,
   User,
   Calendar,
@@ -17,18 +17,17 @@ import {
   Eye,
   Heart,
   Target,
-  Info
-} from 'lucide-react';
+  Info,
+} from "lucide-react";
 import { useParams } from "react-router-dom";
 
 const GeneralConditions = () => {
-    const { condition } = useParams();
+  const { condition } = useParams();
   const [expandedSection, setExpandedSection] = useState(null);
 
-   const herniaRef = useRef(null);
+  const herniaRef = useRef(null);
   const gallstonesRef = useRef(null);
   const gallbladderRef = useRef(null);
-
 
   // Expand and scroll to the matching section
   useEffect(() => {
@@ -54,13 +53,22 @@ const GeneralConditions = () => {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
-  const ConditionCard = ({ icon: Icon, title, children, sectionKey, gradientFrom, gradientTo }) => (
+  const ConditionCard = ({
+    icon: Icon,
+    title,
+    children,
+    sectionKey,
+    gradientFrom,
+    gradientTo,
+  }) => (
     <div className="mb-8">
-      <div 
+      <div
         className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl border border-tealLight/20"
         onClick={() => toggleSection(sectionKey)}
       >
-        <div className={`p-6 bg-gradient-to-r from-${gradientFrom} to-${gradientTo}`}>
+        <div
+          className={`p-6 bg-gradient-to-r from-${gradientFrom} to-${gradientTo}`}
+        >
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <div className="p-3 rounded-full bg-white/20 backdrop-blur-sm mr-4">
@@ -68,17 +76,16 @@ const GeneralConditions = () => {
               </div>
               <h2 className="text-2xl font-bold text-white">{title}</h2>
             </div>
-            {expandedSection === sectionKey ? 
-              <ChevronDown className="w-6 h-6 text-white" /> : 
+            {expandedSection === sectionKey ? (
+              <ChevronDown className="w-6 h-6 text-white" />
+            ) : (
               <ChevronRight className="w-6 h-6 text-white" />
-            }
+            )}
           </div>
         </div>
-        
+
         {expandedSection === sectionKey && (
-          <div className="p-8 bg-tealLight/5">
-            {children}
-          </div>
+          <div className="p-8 bg-tealLight/5">{children}</div>
         )}
       </div>
     </div>
@@ -92,7 +99,9 @@ const GeneralConditions = () => {
   );
 
   const InfoBox = ({ icon: Icon, title, content, bgColor, iconColor }) => (
-    <div className={`p-5 rounded-xl ${bgColor} border border-tealLight/20 mb-4 hover:shadow-md transition-all duration-200`}>
+    <div
+      className={`p-5 rounded-xl ${bgColor} border border-tealLight/20 mb-4 hover:shadow-md transition-all duration-200`}
+    >
       <div className="flex items-start">
         <div className={`p-2 rounded-lg ${iconColor} mr-3 mt-1`}>
           <Icon className="w-5 h-5 text-white" />
@@ -112,15 +121,25 @@ const GeneralConditions = () => {
         <div className="absolute inset-0 opacity-5">
           <svg viewBox="0 0 400 400" className="w-full h-full">
             <defs>
-              <pattern id="medical-grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <circle cx="30" cy="30" r="2" fill="#4C9494"/>
-                <path d="M 30 0 L 30 60 M 0 30 L 60 30" stroke="#8BC5C5" strokeWidth="0.5" opacity="0.6"/>
+              <pattern
+                id="medical-grid"
+                width="60"
+                height="60"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="30" cy="30" r="2" fill="#4C9494" />
+                <path
+                  d="M 30 0 L 30 60 M 0 30 L 60 30"
+                  stroke="#8BC5C5"
+                  strokeWidth="0.5"
+                  opacity="0.6"
+                />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#medical-grid)" />
           </svg>
         </div>
-        
+
         <div className="max-w-6xl mx-auto px-6 py-20 relative">
           <div className="text-center">
             <div className="flex justify-center mb-6">
@@ -128,15 +147,16 @@ const GeneralConditions = () => {
                 <Stethoscope className="w-12 h-12 text-white" />
               </div>
             </div>
-            
+
             <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-tealMedium bg-clip-text text-transparent">
               General Medical Conditions
             </h1>
-            
+
             <div className="w-32 h-2 rounded-full mx-auto mb-8 bg-gradient-to-r from-tealMedium to-tealLight"></div>
-            
+
             <p className="text-xl leading-relaxed max-w-3xl mx-auto text-textGray">
-              Comprehensive information about common medical conditions, their symptoms, causes, diagnosis, and treatment options.
+              Comprehensive information about common medical conditions, their
+              symptoms, causes, diagnosis, and treatment options.
             </p>
           </div>
         </div>
@@ -144,11 +164,10 @@ const GeneralConditions = () => {
 
       <div className="max-w-6xl mx-auto px-6 pb-16">
         {/* Hernia Section */}
-        <ConditionCard 
-          icon={Activity} 
-          title="Hernia" 
+        <ConditionCard
+          icon={Activity}
+          title="Hernia"
           sectionKey="hernia"
-          
           gradientFrom="primary"
           gradientTo="tealMedium"
         >
@@ -158,10 +177,14 @@ const GeneralConditions = () => {
                 <div className="p-2 rounded-lg bg-tealMedium mr-3">
                   <Info className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-primary">What is Hernia?</h3>
+                <h3 className="text-xl font-semibold text-primary">
+                  What is Hernia?
+                </h3>
               </div>
               <p className="text-base leading-relaxed text-textGray">
-                Hernia is an opening formed by the lining of the abdominal cavity. Abdominal wall hernia occurs when the contents of the intestine bulges out of the abdominal wall.
+                Hernia is an opening formed by the lining of the abdominal
+                cavity. Abdominal wall hernia occurs when the contents of the
+                intestine bulges out of the abdominal wall.
               </p>
             </div>
 
@@ -176,9 +199,9 @@ const GeneralConditions = () => {
                 <div className="space-y-2">
                   {[
                     "Abdominal pain",
-                    "Bulge in abdominal area", 
+                    "Bulge in abdominal area",
                     "Groin pain (increases with coughing/lifting)",
-                    "Gurgling sensation"
+                    "Gurgling sensation",
                   ].map((symptom, index) => (
                     <SymptomBadge key={index} symptom={symptom} />
                   ))}
@@ -194,12 +217,21 @@ const GeneralConditions = () => {
                 </h4>
                 <div className="space-y-3">
                   {[
-                    { name: "Inguinal Hernia", desc: "Most common, affects groin area" },
-                    { name: "Femoral Hernia", desc: "Bulge in upper thigh area" },
+                    {
+                      name: "Inguinal Hernia",
+                      desc: "Most common, affects groin area",
+                    },
+                    {
+                      name: "Femoral Hernia",
+                      desc: "Bulge in upper thigh area",
+                    },
                     { name: "Umbilical Hernia", desc: "Around belly button" },
-                    { name: "Recurrent Hernia", desc: "Returns at same site" }
+                    { name: "Recurrent Hernia", desc: "Returns at same site" },
                   ].map((type, index) => (
-                    <div key={index} className="flex items-start p-3 rounded-lg bg-tealLight/10 border border-tealLight/20">
+                    <div
+                      key={index}
+                      className="flex items-start p-3 rounded-lg bg-tealLight/10 border border-tealLight/20"
+                    >
                       <div className="w-3 h-3 rounded-full mt-1 mr-3 bg-tealLight"></div>
                       <div>
                         <p className="font-medium text-primary">{type.name}</p>
@@ -222,9 +254,9 @@ const GeneralConditions = () => {
         </ConditionCard>
 
         {/* Gallstones Section */}
-        <ConditionCard 
-          icon={Zap} 
-          title="Gallstones" 
+        <ConditionCard
+          icon={Zap}
+          title="Gallstones"
           sectionKey="gall-stones"
           gradientFrom="tealMedium"
           gradientTo="tealLight"
@@ -235,20 +267,32 @@ const GeneralConditions = () => {
                 <div className="p-2 rounded-lg bg-tealMedium mr-3">
                   <Info className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-primary">About Gallstones</h3>
+                <h3 className="text-xl font-semibold text-primary">
+                  About Gallstones
+                </h3>
               </div>
               <p className="text-base leading-relaxed mb-4 text-textGray">
-                Small, hard deposits that form inside the gallbladder due to imbalance in bile components. Size can range from a grain of sand to a golf ball.
+                Small, hard deposits that form inside the gallbladder due to
+                imbalance in bile components. Size can range from a grain of
+                sand to a golf ball.
               </p>
-              
+
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-4 rounded-lg bg-tealLight/15 border border-tealLight/30">
-                  <h5 className="font-semibold mb-2 text-primary">Cholesterol Stones</h5>
-                  <p className="text-sm text-textGray">Yellowish-green, made of hardened cholesterol</p>
+                  <h5 className="font-semibold mb-2 text-primary">
+                    Cholesterol Stones
+                  </h5>
+                  <p className="text-sm text-textGray">
+                    Yellowish-green, made of hardened cholesterol
+                  </p>
                 </div>
                 <div className="p-4 rounded-lg bg-tealLight/15 border border-tealLight/30">
-                  <h5 className="font-semibold mb-2 text-primary">Pigment Stones</h5>
-                  <p className="text-sm text-textGray">Dark and small, made of bilirubin</p>
+                  <h5 className="font-semibold mb-2 text-primary">
+                    Pigment Stones
+                  </h5>
+                  <p className="text-sm text-textGray">
+                    Dark and small, made of bilirubin
+                  </p>
                 </div>
               </div>
             </div>
@@ -267,9 +311,12 @@ const GeneralConditions = () => {
                     "Age >60 years",
                     "Family history",
                     "Diabetes & Obesity",
-                    "Rapid weight loss"
+                    "Rapid weight loss",
                   ].map((factor, index) => (
-                    <div key={index} className="flex items-center p-2 rounded bg-tealLight/10 border border-tealLight/20">
+                    <div
+                      key={index}
+                      className="flex items-center p-2 rounded bg-tealLight/10 border border-tealLight/20"
+                    >
                       <Shield className="w-4 h-4 mr-2 text-tealMedium" />
                       <span className="text-sm text-textGray">{factor}</span>
                     </div>
@@ -290,7 +337,7 @@ const GeneralConditions = () => {
                     "Pain between shoulder blades",
                     "Nausea & vomiting",
                     "Fever with chills",
-                    "Yellowing of skin/eyes"
+                    "Yellowing of skin/eyes",
                   ].map((symptom, index) => (
                     <SymptomBadge key={index} symptom={symptom} />
                   ))}
@@ -309,11 +356,16 @@ const GeneralConditions = () => {
                     "Bile duct blockage",
                     "Pancreatitis",
                     "Gallbladder inflammation",
-                    "Increased cancer risk"
+                    "Increased cancer risk",
                   ].map((complication, index) => (
-                    <div key={index} className="flex items-start p-2 rounded bg-red-50 border border-red-200">
+                    <div
+                      key={index}
+                      className="flex items-start p-2 rounded bg-red-50 border border-red-200"
+                    >
                       <AlertTriangle className="w-4 h-4 mr-2 mt-0.5 text-red-500" />
-                      <span className="text-sm text-textGray">{complication}</span>
+                      <span className="text-sm text-textGray">
+                        {complication}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -328,7 +380,7 @@ const GeneralConditions = () => {
                 bgColor="bg-blue-50"
                 iconColor="bg-blue-500"
               />
-              
+
               <InfoBox
                 icon={Pill}
                 title="Treatment"
@@ -341,9 +393,9 @@ const GeneralConditions = () => {
         </ConditionCard>
 
         {/* Gallbladder Disease Section */}
-        <ConditionCard 
-          icon={FileText} 
-          title="Gallbladder Disease" 
+        <ConditionCard
+          icon={FileText}
+          title="Gallbladder Disease"
           sectionKey="gall-bladder-disease"
           gradientFrom="tealLight"
           gradientTo="tealMedium"
@@ -357,7 +409,9 @@ const GeneralConditions = () => {
                 <h3 className="text-xl font-semibold text-primary">Overview</h3>
               </div>
               <p className="text-base leading-relaxed text-textGray">
-                Gallbladder disease is an umbrella term for several conditions affecting the gallbladder. Inflammation of the gallbladder wall (cholecystitis) is responsible for most gallbladder diseases.
+                Gallbladder disease is an umbrella term for several conditions
+                affecting the gallbladder. Inflammation of the gallbladder wall
+                (cholecystitis) is responsible for most gallbladder diseases.
               </p>
             </div>
 
@@ -371,13 +425,18 @@ const GeneralConditions = () => {
                 </h4>
                 {[
                   "Gallstones",
-                  "Gallbladder polyps", 
+                  "Gallbladder polyps",
                   "Gallbladder cancer",
-                  "Sclerosing cholangitis"
+                  "Sclerosing cholangitis",
                 ].map((condition, index) => (
-                  <div key={index} className="flex items-center p-3 rounded-lg bg-tealLight/10 border border-tealLight/20">
+                  <div
+                    key={index}
+                    className="flex items-center p-3 rounded-lg bg-tealLight/10 border border-tealLight/20"
+                  >
                     <div className="w-3 h-3 rounded-full mr-3 bg-tealLight"></div>
-                    <span className="font-medium text-primary">{condition}</span>
+                    <span className="font-medium text-primary">
+                      {condition}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -393,8 +452,8 @@ const GeneralConditions = () => {
                   {[
                     "Severe right upper abdominal pain",
                     "Pain traveling to back/shoulder",
-                    "Nausea and vomiting", 
-                    "Fever"
+                    "Nausea and vomiting",
+                    "Fever",
                   ].map((symptom, index) => (
                     <SymptomBadge key={index} symptom={symptom} />
                   ))}
@@ -410,7 +469,7 @@ const GeneralConditions = () => {
                 bgColor="bg-blue-50"
                 iconColor="bg-blue-500"
               />
-              
+
               <InfoBox
                 icon={Pill}
                 title="Treatment Options"
@@ -418,7 +477,7 @@ const GeneralConditions = () => {
                 bgColor="bg-green-50"
                 iconColor="bg-green-500"
               />
-              
+
               <InfoBox
                 icon={Scissors}
                 title="Surgery"
@@ -442,21 +501,26 @@ const GeneralConditions = () => {
               Important Medical Notice
             </h3>
             <p className="text-lg leading-relaxed max-w-2xl mx-auto text-textGray">
-              This information is for educational purposes only and should not replace professional medical advice. 
-              Always consult with qualified healthcare professionals for proper diagnosis and treatment.
+              This information is for educational purposes only and should not
+              replace professional medical advice. Always consult with qualified
+              healthcare professionals for proper diagnosis and treatment.
             </p>
             <div className="flex justify-center space-x-8 mt-6">
               <div className="flex items-center">
                 <div className="p-2 rounded-lg bg-tealMedium/10 mr-2">
                   <Stethoscope className="w-5 h-5 text-tealMedium" />
                 </div>
-                <span className="text-sm text-textGray font-medium">Professional Care</span>
+                <span className="text-sm text-textGray font-medium">
+                  Professional Care
+                </span>
               </div>
               <div className="flex items-center">
                 <div className="p-2 rounded-lg bg-tealMedium/10 mr-2">
                   <Shield className="w-5 h-5 text-tealMedium" />
                 </div>
-                <span className="text-sm text-textGray font-medium">Trusted Information</span>
+                <span className="text-sm text-textGray font-medium">
+                  Trusted Information
+                </span>
               </div>
             </div>
           </div>

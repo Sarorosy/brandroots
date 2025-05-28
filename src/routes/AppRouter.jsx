@@ -13,6 +13,9 @@ import BreastShapeChanges from "../pages/diagnosis/BreastShapeChanges";
 import BreastPain from "../pages/diagnosis/BreastPain";
 import BreastBiopsy from "../pages/diagnosis/BreastBiopsy";
 import GeneralConditions from "../pages/conditions/GeneralConditions";
+import Laparoscopic from "../pages/treatments/Laproscopic";
+import GallBladderSurgery from "../pages/treatments/GallBladderSurgery";
+import OpenMeshRepair from "../pages/treatments/OpenMeshRepair";
 
 export default function AppRouter() {
   return (
@@ -38,7 +41,9 @@ export default function AppRouter() {
 
 
           <Route path="/general-surgery/conditions/:condition" element={<GeneralConditions />} />
-          <Route path="/general-surgery/treatments/laparoscopic-mesh-repair-of-inguinal-/-femoral-hernia" element={<GeneralConditions />} />
+          <Route path="/general-surgery/treatments/laparoscopic-mesh-repair-of-inguinal-/-femoral-hernia" element={<Laparoscopic />} />
+          <Route path="/general-surgery/treatments/laparoscopic-gall-bladder-surgery" element={<GallBladderSurgery />} />
+          <Route path="/general-surgery/treatments/open-mesh-repair-of-umbilical-and-para-umbilical-hernia" element={<OpenMeshRepair />} />
 
         </Route>
 
